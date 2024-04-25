@@ -2,12 +2,13 @@
 
 ## 1 - Instalación de dependencias, extensiones, paquetes & IDE.
 
-ECMAScript
 
 - Instalar NodeJS (desde nodejs.org)
+   - desde la terminal `node -v`para verificar la instalación.
 - Instalar Code Runner en VSC.
+   - Esto es una extensión que nos facilita la vida para correr codigo desde vsc sin ir a la terminal.
 - Instalar NPM (opcional NVM)
-
+   - viene incluido con nodeJS. Verificar con `npm -v` desde la terminal.
 
 
 ## 2 - Mi primer script en Javascript.
@@ -39,12 +40,14 @@ multi-línea
 */
 ``` -->
 
-truco comentar en grupo 'Ctrl + K + C'
+- truco comentar en grupo 'Ctrl + K + C'
 
 
 
 
 ### 2.4 - Variables.
+
+var, let y const. Recordamos el alcance o `scope`
 
 #### 2.4.1 Strings
 ```js
@@ -59,7 +62,7 @@ console.log(miCadena + miCadena2);
 ```
 
 #### 2.4.2 Number
-
+Números, todos los tipos: decimales, enteros...
 
 #### 2.4.3 Boolean
 
@@ -68,13 +71,11 @@ Llamados lógicos. Nos indican si algo es True o False.
 #### 2.4.4 Undefined
 #### 2.4.4 Null
 
-replit.com
-
 ## 3 - Tipos de datos
-
+Numeros, cadenas y booleanos. Luego el resto, casi todos `objects` como arrays y métodos.
 
 ## 4 - Operadores
-
+Ver archivos .js
 ### 4.1 - Operador de asignación.
 ### 4.2 - Operadores de incremento y decremento.
 ### 4.3 - Operadores aritméticos o matemáticos.
