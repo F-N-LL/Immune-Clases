@@ -76,3 +76,4 @@ typeof number * 1; //NaN
 
 // unNumero = 200;
 
+// hasta aquí la primera clase 
