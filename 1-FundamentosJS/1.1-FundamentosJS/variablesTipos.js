@@ -19,15 +19,17 @@
 // *****************************************************
 
 
-//VARIABLES: asignamos valores.
+// ✅ VARIABLES: asignamos valores.
 
 var miCadenaVar = "Hola a todos";
 var miCadena2Var = 'Hola clase';
 
-// Usar 'var' como palabra clave es una práctica desfasada,
-// que debemos cambiar por 'const', para constantes, cuando no va a
-// cambiar su valor a lo largo del código y 'let' para variables cuyo 
-// valor puede volver a ser asignado en el código.
+// 🚨 Usar 'var' como palabra clave es una práctica desfasada, aunque se
+// ve habitualemnte en tutoriales y ambitos educativos, lo mejor es que
+// acostumbremos desde el comienzo a usar 'const', para constantes, cuando no
+// cambie su valor a lo largo del código y 'let' para variables cuyo 
+// valor puede volver a ser asignado en el código. Esta es una pregunta frecuente
+// en entrevistas técnicas para desarrolladores juniors 'el alcance de las variables'.
 
  
 const miCadena = "Hola a todos"; // 'String', una cadena
