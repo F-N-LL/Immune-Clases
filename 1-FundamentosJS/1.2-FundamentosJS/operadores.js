@@ -85,7 +85,7 @@ let notOk = false;
 // console.log(ok); // true
 // console.log(notOk); // false
 
-// // // NOT ! -> Negación del valor contenido en la variable
+// // NOT ! -> Negación del valor contenido en la variable
 // console.log(!ok); // false
 
 // // AND && -> Si ambos valores son verdaderos, el resultado es verdadero. De lo contrario es falso.
