@@ -13,7 +13,7 @@ const numeros = [10, 15, 20, 25, 30];
 
 
 
-// Solución Output: 20
+// Solución Output: 100
 
 
 // Ejercicio 2: Encontrar el número más grande en un array de números
