@@ -225,27 +225,67 @@ const texto = concatenar(['perro', 'gato', 'elefante']); // Output: perro,gato,e
 console.log(texto);
 
 
+/** Ejercicio 8: 
 
+Parte 1: Contar la cantidad de veces que se repite cada elemento en un array
 
-// Ejercicio 8: Contar la cantidad de veces que se repite cada elemento en un array
-// Escribe una función que reciba un array como argumento y utilice el método every()
-// para verificar si todos los elementos del array son iguales.
+*/
 const elementos = [1, 2, 2, 3, 4, 4, 4, 5];
 
-// Comienza tu código aquí
+function contar(array, num) {
+    const repeticiones = array.filter(function (elemento) {
+        return elemento == num;
+    })
+    return repeticiones.length;
+}
 
+
+const resultado = {}
+
+for (let index = 0; index < elementos.length; index++) {
+    const numero = elementos[index];
+    const repeticionesElemento = contar(elementos, numero);
+    resultado[numero] = repeticionesElemento;
+}
+
+
+console.log(resultado);
 
 
 // Output: { '1': 1, '2': 2, '3': 1, '4': 3, '5': 1 }
+
+/**
+Parte 2: Escribe una función que reciba un array como argumento y utilice el método every()
+para verificar si todos los elementos del array son iguales.
+
+*/
+
+let elementos = [4, 4, 3, 4, 4, 4, 5, 4];
+
+function verificar(array) {
+    return array.every((item) => item == elementos[0])
+}
+
+const resultado = verificar(elementos)
+console.log(resultado)
+
+
+
 
 
 // Ejercicio 9: Encontrar el número más pequeño en un array de números sin utilizar métodos explícitos de ordenamiento
 // Escribe una función que reciba un array de números como argumento y encuentre el número más pequeño sin usar
 // métodos explícitos de ordenamiento.
+
 const numeros = [10, 5, 8, 15, 3];
 
-// Comienza tu código aquí
+function buscarMin(array) {
+    const encontrar = array.find((item) => item <= array[4])
+    console.log(encontrar)
 
+}
+
+buscarMin(numeros);
 
 
 // Output: 3
@@ -253,9 +293,23 @@ const numeros = [10, 5, 8, 15, 3];
 
 // Ejercicio 10: Invertir el orden de un array sin utilizar el método reverse()
 // Escribe una función que reciba un array como argumento y lo invierta sin utilizar el método reverse().
-const array = [1, 2, 3, 4, 5];
+const array1 = [1, 2, 3, 4, 5];
 
-// Comienza tu código aquí
+function reverse(array) {
+    var length = array.length;
+
+
+    for (let posicion = 0; posicion < length / 2; posicion++) {
+        const element = array[posicion];
+        array[posicion] = array[length - 1 - posicion];
+        array[length - 1 - posicion] = element;
+
+    }
+
+    return array1;
+}
+
+console.log(reverse(array1));
 
 
 
@@ -265,20 +319,49 @@ const array = [1, 2, 3, 4, 5];
 // Ejercicio 11: Eliminar todos los elementos duplicados de un array sin utilizar el método filter()
 const duplicados = [1, 2, 2, 3, 4, 4, 5];
 
-// Comienza tu código aquí
+function eliminarDuplicados(array) {
+    const arraySinDuplicados = [];
 
+    // Recorremos el array original
+    for (let i = 0; i < array.length; i++) {
+        // Si el elemento actual no está en el array sin duplicados, lo agregamos
+        if (arraySinDuplicados.indexOf(array[i]) === -1) {
+            arraySinDuplicados.push(array[i]);
+        }
+    }
+
+    return arraySinDuplicados;
+}
+
+console.log(eliminarDuplicados(duplicados));
 
 
 // Output: [1, 2, 3, 4, 5]
 
 
 
-// Ejercicio 12: Contar la cantidad de veces que se repite cada elemento en un array sin utilizar
-// métodos explícitos de conteo
-const elementos = [1, 2, 2, 3, 4, 4, 4, 5];
+// Ejercicio 12: Contar la cantidad de veces que se repite cada elemento en un array sin utilizar métodos explícitos de conteo
+const elementosDuplicados = [1, 2, 2, 3, 4, 4, 4, 5];
 
-// Comienza tu código aquí
+function contarRepeticiones(array) {
+    const contador = {}; // objeto vacio para ir agregando clave:valor--> clave  numero : valor repeticiones
+
+    for (var posicion = 0; posicion < array.length; posicion++) {
+
+        if (contador[array[posicion]]) {
+            contador[array[posicion]]++; // Si el elemento ya existe en el contador, aumentamos su conteo
+
+        } else {
+
+            contador[array[posicion]] = 1; // Si el elemento no existe en el contador, lo inicializamos en 1
+        }
+    }
+
+    return contador;
+}
 
 
+console.log(contarRepeticiones(elementosDuplicados));
 
 // Output: { '1': 1, '2': 2, '3': 1, '4': 3, '5': 1 }
+
