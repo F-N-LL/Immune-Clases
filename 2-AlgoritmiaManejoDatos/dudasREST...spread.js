@@ -47,6 +47,9 @@ console.log(zoo2)
 
 
 
+function sumarNumeros(...numeros) {
+    return numeros.reduce((total, numero) => total + numero, 0);
+}
 
 
 
@@ -60,7 +63,10 @@ console.log(sumarNumeros(1, 2, 3, 4))
 // Implementa una función llamada calcularPromedio que acepte una cantidad 
 //variable de números y calcule el promedio de todos ellos.Ejemplo de entrada:
 
-
+function calcularPromedio(...numeros) {
+    const longitud = numeros.length;
+    return numeros.reduce((total, num) => total + num / longitud, 0)
+}
 
 
 // no tocar
@@ -74,10 +80,13 @@ console.log(calcularPromedio(2, 4, 6, 8, 10))
 //Crea una función llamada encontrarMayor que tome una cantidad indefinida de 
 //argumentos numéricos y devuelva el número más grande de todos.Ejemplo de entrada:
 
+function encontrarMayor(...muchosNumeros) {
+    const numeroAlto = Math.max(...muchosNumeros);
+    return numeroAlto;
+
+}
 
 
 // no tocar
 console.log(encontrarMayor(10, 5, 23, 8, 17))
 //Salida esperada: 23
-
-
