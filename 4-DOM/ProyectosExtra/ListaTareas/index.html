@@ -1,0 +1,60 @@
+<!-- Enunciado: Creación de una Lista de Tareas con HTML, CSS y JavaScript
+
+En este ejercicio, vamos a crear una aplicación web simple para gestionar una lista de tareas. 
+La aplicación permitirá a los usuarios agregar nuevas tareas, establecer fechas límite y mostrar 
+una lista de tareas pendientes. Utilizaremos HTML para la estructura de la página, CSS para el 
+diseño y JavaScript para la funcionalidad de la aplicación.
+
+Requisitos:
+
+Estructura HTML básica: Crea un archivo HTML con la estructura básica. Asegúrate de incluir una 
+cabecera con el título de la página, un formulario para agregar nuevas tareas y una sección para mostrar la lista de tareas.
+
+Estilos CSS: Utiliza CSS para dar estilo a la página y mejorar su apariencia visual. Puedes 
+personalizar los colores, fuentes y diseño según tus preferencias. Hemos divido en clases y otros (random.css).
+
+Funcionalidad JavaScript:
+
+Crea un archivo JavaScript para manejar la funcionalidad de la aplicación.
+Implementa una función para agregar nuevas tareas a la lista.
+Implementa una función para mostrar la lista de tareas pendientes.
+Utiliza localStorage para almacenar las tareas, de modo que persistan incluso después de recargar la página.
+Interacción del Usuario: Asegúrate de que los usuarios puedan ingresar una descripción para cada 
+tarea y establecer una fecha límite opcional. Proporciona un botón para agregar nuevas tareas a la 
+lista y muestra las tareas de manera clara y organizada. -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <link rel="stylesheet" href="random.css">
+    <link rel="stylesheet" href="classes.css">
+</head>
+
+<body>
+    <header>
+        <h1>TODO LIST</h1>
+    </header>
+    <main>
+        <form>
+            <h2>Nueva tarea</h2>
+            <label for="descriptionInput">Escribe la descripción de la tarea</label>
+            <textarea id="descriptionInput"></textarea>
+            <label>Fecha límite</label>
+            <input id="dateInput" type="date" />
+            <button id="mySubmitButton">INSERTAR</button>
+        </form>
+        <section>
+            <h2>Tareas</h2>
+            <ul id="list">
+            </ul>
+        </section>
+    </main>
+    <script src="functionality.js"></script>
+</body>
+
+</html>

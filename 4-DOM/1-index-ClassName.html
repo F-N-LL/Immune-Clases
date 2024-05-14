@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>getElementsByClassName</title>
+
+    </head>
+
+    <body>
+
+        <p class="impar">Item 1</p>
+
+        <p class="par">Item 2</p>
+
+        <p class="impar">Item 3</p>
+
+        <p class="par">Item 4</p>
+
+        <div>
+
+            <h1 class="impar">Hola</h1>
+
+        </div>
+
+        <p>con otra clase</p>
+        <hr>
+
+    </body>
+  <script>
+      const todosLosParrafos = document.getElementsByTagName("p");
+
+    const impares = document.getElementsByClassName('impar');
+
+    for (let impar of impares) {
+
+    //aquí impar se refiere a cada elemento de la lista de parrafos de los 3 disponibles.
+     // document.write(impar.textContent)
+
+    }
+
+
+  </script>
+
+</html>
+
+
+

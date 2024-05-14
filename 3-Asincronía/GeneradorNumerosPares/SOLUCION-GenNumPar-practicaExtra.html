@@ -1,0 +1,160 @@
+ <!-- *****************************************************
+ Proyecto extra: Generador Numeros pares con promesas
+ Lun. 13/05/2024
+ ***************************************************** -->
+
+
+<!-- Ejercicio Práctico: Generador de Números Pares
+Descripción del Problema:
+Desarrolla una aplicación web que genere números aleatorios y compruebe si son pares.
+Si el número generado es par, deberá mostrarlo en verde; de lo contrario, deberá mostrar
+un mensaje de error en rojo indicando que el número generado no es par.
+
+Requisitos:
+La aplicación debe tener un botón que, al hacer clic, generará un número aleatorio.
+Se debe utilizar una promesa para generar el número aleatorio.
+Si el número generado es par, debe mostrarse en verde.
+Si el número generado no es par, debe mostrarse un mensaje de error en rojo.
+El número aleatorio debe generarse con un retraso de 3 segundos después de hacer clic en 
+el botón.
+
+Código Base:
+Se proporciona el código HTML y JavaScript básico para iniciar el desarrollo. Deberás 
+completar la función generateRandomNumber() para que devuelva una promesa que resuelva 
+con un número par aleatorio o rechace con un mensaje de error si el número no es par.
+Además, deberás manejar la lógica para mostrar el número generado o el mensaje de error
+en la lista de resultados. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Example</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 70vh;
+    background-color: #f5f5f5;
+}
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+    position: relative;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: grey;
+}
+
+#generateButton {
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    
+}
+
+#generateButton:hover {
+    background-color: #45a049;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-left: 200px;
+    margin-top: -390px;
+    overflow-y: auto;
+    position: absolute;
+    top: calc(100% + 20px);
+    left: 50%; /* Centrar horizontalmente */
+    transform: translateX(-50%); /* Ajustar para centrar */
+    width: 80%; /* Ajustar el ancho */
+}
+
+li {
+    margin: 12px;
+        
+}
+
+.error {
+    color: red;
+    margin-bottom: 8px;
+}
+
+.esPar {
+    color: green;
+    margin-bottom: 8px;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Promesas asíncronas de ejemplo</h1>
+  
+    <!-- Botón para ejecutar el script -->
+    <button id="generateButton">Generar Número Par</button>
+  
+    <ul id="resultList">
+        <!-- Aquí se imprimirán los resultados y los errores -->
+    </ul>
+  
+ 
+
+    <script>
+        // Función que devuelve una promesa
+        function generateRandomNumber() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    const randomNumber = Math.floor(Math.random() * 10) + 1;
+                    if (randomNumber % 2 === 0) {
+                        resolve(randomNumber);
+                    } else {
+                        reject('El número generado no es par. Vuelve a generar.');
+                    }
+                }, 3000);
+            });
+        }
+
+        // Manejar el clic del botón
+        document.getElementById('generateButton').addEventListener('click', () => {
+            // Limpiar la lista antes de añadir nuevos elementos
+            //document.getElementById('resultList').innerHTML = '';
+
+            // Generar el número par y manejar el resultado usando .then() y .catch()
+            generateRandomNumber()
+                .then(randomNumber => {
+                    // Crear un nuevo elemento de lista para el resultado
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `Número par generado: ${randomNumber}`;
+                    listItem.classList.add('esPar');
+                    // Agregar el elemento de lista al DOM
+                    document.getElementById('resultList').appendChild(listItem);
+                })
+                .catch(error => {
+                    // En caso de error, mostrar el mensaje en la consola
+                    console.error(error);
+                    // Crear un nuevo elemento de lista para el error
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `Error: ${error}`;
+                    listItem.classList.add('error');
+                    // Agregar el elemento de lista al DOM
+                    document.getElementById('resultList').appendChild(listItem);
+                });
+        });
+    </script>
+</body>
+</html>
+

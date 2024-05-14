@@ -363,3 +363,53 @@
     
     
     // TRY ~ CATCH
+
+  
+// Imagina que tienes una función llamada obtenerUsuario que devuelve el nombre de un usuario
+// después de un cierto tiempo de espera simulado. Queremos usar async y await para esperar 
+// a que esta función se complete antes de continuar con la ejecución del código.
+
+
+// Función que simula obtener el nombre de un usuario después de un tiempo de espera
+function obtenerUsuario() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve('John Doe'); // Simulación de obtener el nombre del usuario
+        }, 2000); // Simulamos una operación que toma 2 segundos
+    });
+}
+
+// Función que utiliza async/await para esperar a que se resuelva la promesa
+async function saludarUsuario() {
+    try {
+        console.log('Obteniendo nombre del usuario...');
+        const nombreUsuario = await obtenerUsuario(); // Esperamos a que se resuelva la promesa
+        console.log('Hola,', nombreUsuario);
+    } catch (error) {
+        console.error('Error al obtener el nombre del usuario:', error);
+    }
+}
+
+// Llamamos a la función que utiliza async/await
+saludarUsuario();
+console.log('Fin del programa.');
+
+
+// En este ejemplo:
+
+// Definimos la función obtenerUsuario, que devuelve una promesa que se resuelve con el 
+// nombre del usuario después de un tiempo de espera simulado de 2 segundos.
+
+// Luego, definimos la función saludarUsuario con la palabra clave async, lo que 
+// indica que esta función contendrá expresiones await.
+
+// Dentro de saludarUsuario, utilizamos await para esperar a que la promesa devuelta 
+// por obtenerUsuario se resuelva. Esto significa que la ejecución del código se pausará 
+// en esta línea hasta que la promesa se resuelva con el nombre del usuario.
+
+// Usamos try y catch para manejar cualquier error que pueda ocurrir durante la ejecución de la promesa.
+
+// Finalmente, llamamos a saludarUsuario(). Como saludarUsuario contiene expresiones await, 
+// se ejecutará de forma asíncrona, permitiendo que otras partes del código continúen 
+// ejecutándose mientras esperamos a que se resuelva la promesa.
+
