@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificacion atributos</title>
+</head>
+<body>
+    <a href="https://wwww.google.com" title="google" id="enlace">Google</a>
+
+<script>
+    // capturamos el enlace
+    const enlace = document.getElementById('enlace');
+
+    console.log("Ruta del enlace", enlace.href);
+    enlace.title = 'enlace directo a google';
+
+    // Modificaciones CSS
+
+    // Crear nodo parrafo
+    let parrafo = document.createElement('p');
+    parrafo.textContent = "Parrafo uno y su contenido";
+    parrafo.id = "parrafo";
+
+    // Añadimos parrafo al body
+    document.body.appendChild(parrafo);
+
+    // Acceder a style
+
+    parrafo.style.fontWeight = "bold";
+
+    // Modificar className
+
+    parrafo.className = "miPrimerParrafo"
+
+    // Mostrar la clase del parrafo
+    console.log('Clase del parrafo es: ', parrafo.className)
+
+</script>
+</body>
+</html>

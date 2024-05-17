@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Random color example — event handler attribute</title>
+    <style>
+     body {
+      display: flex;
+      justify-content: center; 
+      align-items: center; 
+      height: 100vh; 
+      margin: 0;
+      background-color: #2ff2ff
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px; 
+      border-radius: 8px;
+    }
+    </style>
+  </head>
+  <body>
+    <button id="boton">Change color</button>
+    <script>
+      
+      
+      const btn = document.querySelector('button');
+
+
+      function random(number) {
+        return Math.floor(Math.random() * (number+1));
+      }
+      
+
+      
+/*
+
+// Si queremos cambiar el fondo del bg a uno aleatorio
+
+      btn.addEventListener('mouseover', () => {
+        const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+        document.body.style.backgroundColor = rndCol;
+      });
+*/
+      
+      
+   //const targetButton = document.getElementById('boton');
+/*
+
+// Si queremos cambiar el fondo del boton solo
+
+      // Agrega el event listener al botón 'btn'
+      btn.addEventListener('mouseover', () => {
+        const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+        // Cambia el color de fondo del botón con el ID 'boton'
+        targetButton.style.backgroundColor = rndCol;
+      });
+
+*/
+ 
+
+/*
+
+// Si queremos cambiar el fondo y el boton:
+
+      // Agrega el event listener al botón 'btn'
+      btn.addEventListener('mouseover', () => {
+        // Genera un color RGB aleatorio
+        const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+        // Cambia el color de fondo del body
+        document.body.style.backgroundColor = rndCol;
+        // Cambia el color de fondo del botón al mismo color del body
+        btn.style.backgroundColor = document.body.style.backgroundColor;
+      });
+*/
+      
+  
+/*  
+
+  // Si tenemos que cambiar el color del boton por el del fondo:
+  
+  
+      // Agrega el event listener al botón 'btn'
+      btn.addEventListener('dblclick', () => {
+      // Obtiene el color de fondo del body
+      const bodyBgColor = getComputedStyle(document.body).backgroundColor;
+      // Cambia el color de fondo del botón al mismo color del body
+      btn.style.backgroundColor = bodyBgColor;
+      });
+      
+*/
+
+
+/*     
+      
+ // Pasando parámetros a las funciones de escucha de eventos:
+ 
+    btn.addEventListener("mouseover", miFunction);
+
+    // Define la función 'miFunction'
+    function miFunction(event) {
+      // Muestra el texto del botón en la consola
+      console.log(event.target.innerText); 
+    }
+    
+*/
+
+
+    </script>
+  </body>
+</html>

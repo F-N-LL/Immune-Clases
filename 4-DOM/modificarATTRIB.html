@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="description" content="MODIFICAR ATRIB DOM">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modificar Atributos del DOM</title>
+<style>
+  /* Estilos CSS para el ejemplo */
+  .miParrafo {
+    color: blue;
+    font-size: 18px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Elemento de ejemplo -->
+<a href="http://www.google.es" title="google" id="enlace">Texto Enlace</a>
+
+<!-- Script JavaScript para modificar atributos del DOM -->
+<script>
+  // Capturamos el objeto enlace
+  let enlace = document.getElementById('enlace');
+
+  // Leemos y modificamos los atributos
+  console.log("Ruta del enlace:", enlace.href); // Lee el atributo href
+  enlace.title = "Este enlace va a Google"; // Modifica el atributo title
+
+  // Modificación de propiedades CSS
+  let parrafo = document.createElement('p'); // Creamos un nuevo elemento párrafo
+  parrafo.textContent = "Contenido del párrafo";
+  parrafo.id = "parrafo"; // Añadimos un ID al párrafo
+  
+  // Añadimos el párrafo al cuerpo del documento
+  document.body.appendChild(parrafo);
+
+  // Accedemos a la propiedad style y modificamos una propiedad CSS
+  parrafo.style.fontWeight = "bold"; // Añadimos negrita al párrafo
+
+  // Acceso a la propiedad CSS compuesta
+  console.log("Estilo de fuente del párrafo:", parrafo.style.fontWeight); // Muestra "bold"
+
+  // Modificación del atributo class (className)
+  parrafo.className = "miParrafo"; // Modifica la clase del párrafo
+
+  // Muestra el class del párrafo
+  console.log("Clase del párrafo:", parrafo.className);
+</script>
+
+</body>
+</html>
