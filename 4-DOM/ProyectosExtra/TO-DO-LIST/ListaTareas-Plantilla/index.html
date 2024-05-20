@@ -31,7 +31,7 @@ lista y muestra las tareas de manera clara y organizada. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Tareas</title>
-    <link rel="stylesheet" href="random.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="classes.css">
 </head>
 
@@ -40,21 +40,29 @@ lista y muestra las tareas de manera clara y organizada. -->
         <h1>TODO LIST</h1>
     </header>
     <main>
-        <form>
-            <h2>Nueva tarea</h2>
-            <label for="descriptionInput">Escribe la descripción de la tarea</label>
-            <textarea id="descriptionInput"></textarea>
-            <label>Fecha límite</label>
-            <input id="dateInput" type="date" />
-            <button id="mySubmitButton">INSERTAR</button>
-        </form>
-        <section>
+       <form>
+        <h2>Nueva Tarea</h2>
+        <label for="descriptionInput">Escribe la descripcion de tu tarea</label>
+        <textarea id="descriptionInput"></textarea>
+        <label>Fecha límite</label>
+        <input id="dateInput" type="date" />
+        <button id="mySubmitButton" class="center bluebox insertbutton">Insertar</button>
+       </form>
+
+       <!-- Aqui colocaremos el metodo de llmadad a la API -->
+       <br>
+       <button id="fetchButton" class="center bluebox insertbutton">Agregar tarea desde el backend</button>
+       <!-- Generar la lista de tareas -->
+       <section>
             <h2>Tareas</h2>
+
             <ul id="list">
+
             </ul>
-        </section>
+       </section>
+
     </main>
-    <script src="functionality.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

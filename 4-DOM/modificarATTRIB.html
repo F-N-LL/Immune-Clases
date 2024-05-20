@@ -46,6 +46,11 @@
 
   // Muestra el class del párrafo
   console.log("Clase del párrafo:", parrafo.className);
+
+  // Modificación de atributos: Enlace redirigido a página nueva
+  let enlaceNuevo = document.querySelector('a[href="https://based.cooking/kombucha/"]')
+
+  enlaceNuevo.setAttribute('target', '_blank')
 </script>
 
 </body>
