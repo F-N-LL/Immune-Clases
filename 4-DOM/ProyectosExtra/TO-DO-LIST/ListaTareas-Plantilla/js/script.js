@@ -101,7 +101,6 @@ const renderListOfTasks = () => {
         };
 
 
-
         // Añadir Flechas
         const buttonUpElement = document.createElement('button');
         buttonUpElement.innerText = '↑';
@@ -136,7 +135,17 @@ const renderListOfTasks = () => {
 
 }
 
-const fetchButton = document.getElementById('fetchButton')
+// Deberes crear el boton desde JS y no desde HTML
+
+
+const mainElement = document.querySelector('form'); // Selecciona el formulario o main
+
+const fetchButton = document.createElement('button');
+fetchButton.innerText = 'llamada API';
+fetchButton.id = 'fetchButton';
+fetchButton.className = 'center bluebox fetchbutton'; 
+
+// const fetchButton = document.getElementById('fetchButton')
 
 fetchButton.onclick = () => {
 
@@ -167,3 +176,6 @@ fetchButton.onclick = () => {
         })
     
 }
+
+//formElement.appendChild(fetchButton)
+mainElement.insertAdjacentElement('afterend', fetchButton);

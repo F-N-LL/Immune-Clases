@@ -1,6 +1,10 @@
 # Constructor JS
 
-
+<style>
+    code {
+        font-family: 'hack', monospace;
+    }
+</style>
 1. **¿Qué es una función constructora?**
    Una función constructora es una función normal que se utiliza para crear objetos. En JavaScript, los objetos se crean a partir de plantillas llamadas "funciones constructoras". Estas funciones se utilizan para definir propiedades y comportamientos iniciales para los objetos que se van a crear.
 
